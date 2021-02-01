@@ -1,0 +1,48 @@
+//MOBILE sm
+@media (min-width: map-get($map: $media-width, $key: sm)) {
+  nav {
+    height: map-get($map: $hanglines, $key: sm);
+  }
+  nav.roll-up {
+    top: -$nav_height_sm;
+  }
+  .all-content {
+    top: map-get($map: $hanglines, $key: sm);
+  }
+  //TABLET md
+  @media (min-width: map-get($map: $media-width, $key: md)) {
+    nav {
+      height: -$nav_height_md;
+    }
+    nav.roll-up {
+      top: -$nav_height_md;
+    }
+    .all-content {
+      top: map-get($map: $hanglines, $key: md);
+    }
+    //DESKTOP lg
+    @media (min-width: map-get($map: $media-width, $key: lg)) {
+      nav {
+        height: map-get($map: $hanglines, $key: lg);
+      }
+      nav.roll-up {
+        top: -$nav_height_lg;
+      }
+      .all-content {
+        top: map-get($map: $hanglines, $key: lg);
+      }
+      //HI RES xl
+      @media (min-width: map-get($map: $media-width, $key: xl)) {
+        nav {
+          height: map-get($map: $hanglines, $key: xl);
+        }
+        nav.roll-up {
+          top: -$nav_height_xl;
+        }
+        .all-content {
+          top: map-get($map: $hanglines, $key: xl);
+        }
+      }
+    }
+  }
+}

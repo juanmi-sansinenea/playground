@@ -1,0 +1,36 @@
+//MOBILE sm
+@media (min-width: map-get($map: $media-width, $key: sm)) {
+    .container {
+        width: 100vw;
+        //background: $gradient-1;
+        display: grid;
+        //grid-template-columns: 20px repeat(6, 1fr) 20px;
+        height: 600px;
+        //height: calc(100vh - 24px - 40px - 40px);
+    }
+    //TABLET md
+    @media (min-width: map-get($map: $media-width, $key: md)){
+        .container {
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: minmax(100px, auto);
+        }
+        //DESKTOP lg
+        @media (min-width: map-get($map: $media-width, $key: lg)){
+            .container {
+                grid-template-columns: 400px 1fr 1fr;
+                grid-auto-rows: minmax(100px, auto);
+            }
+            //HI RES xl
+            @media (min-width: map-get($map: $media-width, $key: xl)){
+
+            }
+        }
+    }
+}
+
+
+.module {
+  background-color: map-get($map: $colors, $key: light-grey);
+  margin: 0.25rem;
+  overflow-y: scroll; // not working (?)
+}
