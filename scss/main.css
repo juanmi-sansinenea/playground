@@ -143,7 +143,7 @@ table {
   cursor: pointer;
   border-radius: 2rem;
   border: none;
-  background-color: #666666;
+  background-color: #333;
   -webkit-transition: background-color 0.5s ease 0s;
   transition: background-color 0.5s ease 0s;
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.185);
@@ -176,6 +176,7 @@ h1 {
   font-size: 3rem;
   font-weight: 700;
   margin: 2rem;
+  color: #333;
 }
 
 .social {
@@ -212,17 +213,24 @@ nav ul {
           align-items: center;
 }
 
-nav ul li {
+nav ul > li {
   list-style: none;
   margin: 10px 2em 0px 2em;
 }
 
 nav ul ul {
   display: block;
+  list-style: none;
 }
 
 nav ul ul li {
+  display: block;
+  font-size: 10pt;
   color: #333;
+  list-style: none;
+  margin: 0px;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .launch-dropdown {
@@ -233,11 +241,35 @@ nav ul ul li {
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 80px;
+  min-width: 120px;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 20px 0;
   z-index: 20;
+  margin-top: 5px;
+  -webkit-animation: slidein 0.5s ease;
+          animation: slidein 0.5s ease;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    opacity: 0;
+    margin-top: 25px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 5px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    margin-top: 25px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 5px;
+  }
 }
 
 .launch-dropdown:hover .dropdown-content {
