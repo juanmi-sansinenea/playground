@@ -6,30 +6,37 @@ $font-weights: (
   "medium": 500,
   "bold:": 700,
 );
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
 $colors: (
   "primary": #ff6b00,
   "secondary": #e233ff,
   "middle-grey": rgb(78, 78, 78),
   "light-grey": rgb(228, 228, 228),
   "dark": #333,
-
 );
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
 
-$media-width: (
+$media-widths: (
   "sm": 0px,
   "md": 768px,
   "lg": 1366px,
   "xl": 1920px,
 );
 
-$hanglines: (
+$nav_heights: (
   "sm": 50px,
   "md": 70px,
   "lg": 80px,
   "xl": 100px,
 );
-
-$nav_height_sm: 50px;
-$nav_height_md: 70px;
-$nav_height_lg: 80px;
-$nav_height_xl: 100px;
+@function nav_height($nav_height) {
+  @return map-get($nav_heights, $nav_height);
+}
+@function invert_nav_height($nav_height) {
+  @return -1 * (map-get($nav_heights, $nav_height));
+}

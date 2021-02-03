@@ -1,46 +1,46 @@
 //MOBILE sm
-@media (min-width: map-get($map: $media-width, $key: sm)) {
+@media (min-width: map-get($media-widths, sm)) {
   nav {
-    height: map-get($map: $hanglines, $key: sm);
+    height: nav_height(sm);
   }
   nav.roll-up {
-    top: -$nav_height_sm;
+    top: invert_nav_height(sm);
   }
   .all-content {
-    top: map-get($map: $hanglines, $key: sm);
+    top: nav_height(sm);
   }
   //TABLET md
-  @media (min-width: map-get($map: $media-width, $key: md)) {
+  @media (min-width: map-get($media-widths, md)) {
     nav {
-      height: -$nav_height_md;
+      height: nav_height(md);
     }
     nav.roll-up {
-      top: -$nav_height_md;
+      top: invert_nav_height(md);
     }
     .all-content {
-      top: map-get($map: $hanglines, $key: md);
+      top: nav_height(md);
     }
     //DESKTOP lg
-    @media (min-width: map-get($map: $media-width, $key: lg)) {
+    @media (min-width: map-get($media-widths, lg)) {
       nav {
-        height: map-get($map: $hanglines, $key: lg);
+        height: nav_height(lg);
       }
       nav.roll-up {
-        top: -$nav_height_lg;
+        top: invert_nav_height(lg);
       }
       .all-content {
-        top: map-get($map: $hanglines, $key: lg);
+        top: nav_height(lg);
       }
       //HI RES xl
-      @media (min-width: map-get($map: $media-width, $key: xl)) {
+      @media (min-width: map-get($media-widths, xl)) {
         nav {
-          height: map-get($map: $hanglines, $key: xl);
+          height: nav_height(xl);
         }
         nav.roll-up {
-          top: -$nav_height_xl;
+          top: invert_nav_height(xl);
         }
         .all-content {
-          top: map-get($map: $hanglines, $key: xl);
+          top: nav_height(xl);
         }
       }
     }

@@ -98,7 +98,7 @@ table {
 
 @media (min-width: 0px) and (min-width: 768px) {
   nav {
-    height: -70px;
+    height: 70px;
   }
   nav.roll-up {
     top: -70px;
@@ -178,6 +178,12 @@ h1 {
   margin: 2rem;
 }
 
+.social {
+  background-color: #333;
+  height: 2rem;
+  width: 100vw;
+}
+
 nav {
   z-index: 10;
   color: white;
@@ -227,10 +233,10 @@ nav ul ul li {
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 160px;
+  min-width: 80px;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
+  padding: 20px 0;
   z-index: 20;
 }
 
