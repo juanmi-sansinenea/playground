@@ -210,16 +210,30 @@ nav ul li {
 }
 
 nav ul ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: column;
-      -ms-flex-pack: column;
-          justify-content: column;
+  display: block;
 }
 
 nav ul ul li {
   color: #333;
+}
+
+.launch-dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 20;
+}
+
+.launch-dropdown:hover .dropdown-content {
+  display: block;
 }
 
 a {

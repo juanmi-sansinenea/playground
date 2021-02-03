@@ -5,6 +5,7 @@
 @import "./responsive";
 @import "./buttons";
 
+///////////////// 
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -17,6 +18,7 @@ h1 {
   margin: 2rem;
 }
 
+////////// NAV ////////////////////////////
 nav {
   z-index: 10; // nav index needs to be > 0, since .all-content cannot be negative, or buttons would be unclickable
   color: white;
@@ -38,8 +40,7 @@ nav {
       margin: 10px 2em 0px 2em; // *10px to compensate for ...
     }
     ul {
-      display: flex;
-      justify-content: column;
+      display: block;
       li {
         color: map-get($colors, dark )
       }
@@ -47,6 +48,27 @@ nav {
   }
 }
 
+//--------- Dropdown.-------------
+.launch-dropdown {
+  position: relative;
+  //display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 20;
+}
+
+.launch-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+//--------------Nave menu items----------------------
 a {
   color: #fff;
   text-decoration: none;
@@ -76,6 +98,17 @@ a:hover::after {
   left: 0;
   background: #000;
 }
+
+
+
+
+
+
+
+
+
+
+/////ALL CONTENT////////////////////////////////////////////////
 
 .all-content {
   position: relative;
