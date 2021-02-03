@@ -3,9 +3,7 @@
 @import "./variables";
 @import "./grid-section";
 @import "./responsive";
-
-@function weight() {
-}
+@import "./buttons";
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -20,6 +18,7 @@ h1 {
 }
 
 nav {
+  z-index: 10; // nav index needs to be > 0, since .all-content cannot be negative, or buttons would be unclickable
   color: white;
   font-weight: map-get($map: $font-weights, $key: medium);
   background: $gradient-1;
@@ -37,11 +36,16 @@ nav {
     li {
       list-style: none;
       margin: 10px 2em 0px 2em; // *10px to compensate for ...
-      
+    }
+    ul {
+      display: flex;
+      justify-content: column;
+      li {
+        color: map-get($colors, dark )
+      }
     }
   }
 }
-
 
 a {
   color: #fff;
@@ -54,9 +58,9 @@ a {
 }
 
 a:hover {
-  color:#000;
+  color: #000;
 }
-a::after {    
+a::after {
   bottom: 0;
   content: "";
   display: block;
@@ -66,11 +70,10 @@ a::after {
   background: #fff;
   transition: background 0.3s linear 0s, width 0.3s ease 0s;
   width: 0;
-  
 }
-a:hover::after { 
-  width: 100%; 
-  left: 0; 
+a:hover::after {
+  width: 100%;
+  left: 0;
   background: #000;
 }
 
@@ -78,33 +81,28 @@ a:hover::after {
   position: relative;
   overflow: scroll;
   scroll-behavior: smooth;
-  z-index: -1;
 }
 
+// .button {
+//   font-size: 0.75rem;
+//   font-weight: 700;
+//   text-transform: uppercase;
+//   letter-spacing: 0.05rem;
+//   color: white;
+//   padding: 1rem 2rem;
+//   margin: 2rem;
+//   background: $gradient-1;
+//   border-radius: 5px;
+//   border: none;
+//   //transition: background 0.3s ease 0s;
 
-
-.button {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  color: white;
-  padding: 1rem 2rem;
-  margin: 2rem;
-  background: $gradient-1;
-  border-radius: 5px;
-  border: none;
-  //transition: background 0.3s ease 0s;
-
-}
-.button:hover {
-  background-color: red;
-}
+// }
+// .button:hover {
+//   background-color: red;
+// }
 // .button:focus {
 //   outline: none;
 // }
-
-
 
 p {
   font-weight: map-get($map: $font-weights, $key: medium);
@@ -116,10 +114,8 @@ article {
 
   .main {
     line-height: 1.5rem;
-    //color: map-get($map: $colors, $key: primary);
-    &:hover {
-      color: map-get($map: $colors, $key: secondary);
-      cursor: pointer;
-    }
+    font-weight: 300;
+    color: map-get($colors, middle-grey);
   }
 }
+

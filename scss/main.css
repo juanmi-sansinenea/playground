@@ -132,6 +132,39 @@ table {
   }
 }
 
+.button-homepage {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: white;
+  padding: 1rem 2rem;
+  margin: 2rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  border: none;
+  background-color: #666666;
+  -webkit-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.185);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.185);
+}
+
+.button-homepage:hover {
+  background-color: #ff6b00;
+}
+
+.button-homepage:active {
+  -webkit-transition: background-color 0s 0s;
+  transition: background-color 0s 0s;
+  background-color: #e4e4e4;
+  color: black;
+}
+
+.button-homepage:focus {
+  outline: none;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -144,6 +177,7 @@ h1 {
 }
 
 nav {
+  z-index: 10;
   color: white;
   font-weight: 500;
   background: linear-gradient(0.45turn, #e233ff, #ff6b00);
@@ -173,6 +207,19 @@ nav ul {
 nav ul li {
   list-style: none;
   margin: 10px 2em 0px 2em;
+}
+
+nav ul ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: column;
+      -ms-flex-pack: column;
+          justify-content: column;
+}
+
+nav ul ul li {
+  color: #333;
 }
 
 a {
@@ -212,24 +259,6 @@ a:hover::after {
   position: relative;
   overflow: scroll;
   scroll-behavior: smooth;
-  z-index: -1;
-}
-
-.button {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  color: white;
-  padding: 1rem 2rem;
-  margin: 2rem;
-  background: linear-gradient(0.45turn, #e233ff, #ff6b00);
-  border-radius: 5px;
-  border: none;
-}
-
-.button:hover {
-  background-color: red;
 }
 
 p {
@@ -243,10 +272,7 @@ article {
 
 article .main {
   line-height: 1.5rem;
-}
-
-article .main:hover {
-  color: #e233ff;
-  cursor: pointer;
+  font-weight: 300;
+  color: #4e4e4e;
 }
 /*# sourceMappingURL=main.css.map */

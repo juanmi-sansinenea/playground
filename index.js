@@ -1,5 +1,3 @@
-
-
 // HIDE / SHOW MENU
 const nav = document.querySelector("nav");
 
@@ -11,4 +9,10 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Click to go to buttons
+const explore = document.querySelector(".explore");
 
+explore.addEventListener("click", ()=> {
+    //window.alert("WTF");
+    window.location.href = "./buttons.html"
+});
