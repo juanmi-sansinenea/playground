@@ -144,13 +144,15 @@ table {
   border-radius: 2rem;
   border: none;
   background-color: #666666;
-  -webkit-transition: background-color 0.3s ease 0s;
-  transition: background-color 0.3s ease 0s;
+  -webkit-transition: background-color 0.5s ease 0s;
+  transition: background-color 0.5s ease 0s;
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.185);
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.185);
 }
 
 .button-homepage:hover {
+  -webkit-transition: background-color 0.1s ease 0s;
+  transition: background-color 0.1s ease 0s;
   background-color: #ff6b00;
 }
 
