@@ -18,6 +18,9 @@ h1 {
   margin: 2rem;
   color: color(dark-grey);
 }
+a {
+  text-decoration: none;
+}
 
 ////////// NAV ////////////////////////////
 .social {
@@ -60,6 +63,7 @@ nav {
         margin: 0px;
         padding: 0.5rem 1rem;
         border-bottom: 1px solid color(light-grey);
+        
       }
     }
   }
@@ -73,13 +77,13 @@ nav {
 }
 
 .dropdown-content {
-  display: none;
+  //display: none;// <--this was used when attempting to lauch dropdown without JS
   position: absolute;
   background-color: white;
   min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 20;
-  margin-top: 5px;
+  margin-top: 0px;
   animation: slidein 0.5s ease;
 }
 @keyframes slidein {
@@ -87,19 +91,29 @@ nav {
     opacity: 0;
     margin-top: 25px;
   }
-
   to {
     opacity: 1;
-    margin-top: 5px;
+    margin-top: 0px;
   }
 }
-.launch-dropdown:hover .dropdown-content {
+/*.launch-dropdown:hover .dropdown-content {
   //<--when hovering over launch-dropdown show dropdown content
+  // modifying the css of another class can be done
+  // but this solution only works for sibling or children elements
+  // and since we cannot nest the dropdown 
+  // (becacuse it contains <a> tags and that's illegal) 
+  // ---> well have to use JS
+  display: block;
+}*/
+.invisible {
+  display: none;
+}
+.visible {
   display: block;
 }
 
-//--------------Nave menu items----------------------
-a {
+//--------------Nav menu items----------------------
+.menu-item {
   color: #fff;
   text-decoration: none;
 
@@ -107,27 +121,27 @@ a {
   padding: 0px 0px 10px 0px; // *... these 10 px here
   position: relative;
   transition: color 0.3s ease 0s;
+  &:hover {
+    color: #000;
+  }
+  &::after {
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0%;
+    position: absolute;
+    background: #fff;
+    transition: background 0.3s linear 0s, width 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover::after {
+    width: 100%;
+    left: 0;
+    background: #000;
+  }
 }
 
-a:hover {
-  color: #000;
-}
-a::after {
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  left: 0%;
-  position: absolute;
-  background: #fff;
-  transition: background 0.3s linear 0s, width 0.3s ease 0s;
-  width: 0;
-}
-a:hover::after {
-  width: 100%;
-  left: 0;
-  background: #000;
-}
 
 /////ALL CONTENT////////////////////////////////////////////////
 

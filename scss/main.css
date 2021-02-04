@@ -179,6 +179,10 @@ h1 {
   color: #333;
 }
 
+a {
+  text-decoration: none;
+}
+
 .social {
   background-color: #333;
   height: 2rem;
@@ -238,14 +242,13 @@ nav ul ul li {
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
   background-color: white;
   min-width: 120px;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 20;
-  margin-top: 5px;
+  margin-top: 0px;
   -webkit-animation: slidein 0.5s ease;
           animation: slidein 0.5s ease;
 }
@@ -257,7 +260,7 @@ nav ul ul li {
   }
   to {
     opacity: 1;
-    margin-top: 5px;
+    margin-top: 0px;
   }
 }
 
@@ -268,15 +271,28 @@ nav ul ul li {
   }
   to {
     opacity: 1;
-    margin-top: 5px;
+    margin-top: 0px;
   }
 }
 
-.launch-dropdown:hover .dropdown-content {
+/*.launch-dropdown:hover .dropdown-content {
+  //<--when hovering over launch-dropdown show dropdown content
+  // modifying the css of another class can be done
+  // but this solution only works for sibling or children elements
+  // and since we cannot nest the dropdown 
+  // (becacuse it contains <a> tags and that's illegal) 
+  // ---> well have to use JS
+  display: block;
+}*/
+.invisible {
+  display: none;
+}
+
+.visible {
   display: block;
 }
 
-a {
+.menu-item {
   color: #fff;
   text-decoration: none;
   display: inline-block;
@@ -286,11 +302,11 @@ a {
   transition: color 0.3s ease 0s;
 }
 
-a:hover {
+.menu-item:hover {
   color: #000;
 }
 
-a::after {
+.menu-item::after {
   bottom: 0;
   content: "";
   display: block;
@@ -303,7 +319,7 @@ a::after {
   width: 0;
 }
 
-a:hover::after {
+.menu-item:hover::after {
   width: 100%;
   left: 0;
   background: #000;
