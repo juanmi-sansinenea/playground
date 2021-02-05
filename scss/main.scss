@@ -63,15 +63,13 @@ nav {
         margin: 0px;
         padding: 0.5rem 1rem;
         border-bottom: 1px solid color(light-grey);
-        
       }
     }
   }
 }
 
-
-//--------- Dropdown.-------------
-.launch-dropdown {
+//--------- Dropdown.---------------------------
+.dropdown-trigger {
   position: relative;
   //display: inline-block;
 }
@@ -96,13 +94,13 @@ nav {
     margin-top: 0px;
   }
 }
-/*.launch-dropdown:hover .dropdown-content {
-  //<--when hovering over launch-dropdown show dropdown content
+/*.dropdown-trigger:hover .dropdown-content {
+  //<--when hovering over dropdown-trigger show dropdown content
   // modifying the css of another class can be done
   // but this solution only works for sibling or children elements
   // and since we cannot nest the dropdown 
   // (becacuse it contains <a> tags and that's illegal) 
-  // ---> well have to use JS
+  // ---> we'll have to use JS
   display: block;
 }*/
 .invisible {
@@ -111,7 +109,20 @@ nav {
 .visible {
   display: block;
 }
-
+.transitioning-out {
+  animation: slideout 0.5s ease;
+  animation-fill-mode: forwards;
+}
+@keyframes slideout {
+  0% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+  100% {
+    opacity: 0;
+    margin-top: 25px;
+  }
+}
 //--------------Nav menu items----------------------
 .menu-item {
   color: #fff;
@@ -141,7 +152,6 @@ nav {
     background: #000;
   }
 }
-
 
 /////ALL CONTENT////////////////////////////////////////////////
 
