@@ -26,19 +26,11 @@ dropdownContent.addEventListener("mouseover", visibleDropdown);
 dropdownContent.addEventListener("mouseleave", inVisibleDropdown);
 
 function visibleDropdown() {
-  var isVisible = true;
-  dropdownContent.classList.remove("invisible");
-  dropdownContent.classList.add("visible");
+  dropdownContent.classList.remove("dropdown-init");
+  dropdownContent.classList.remove("dropdown-invisible");
+  dropdownContent.classList.add("dropdown-visible");
 }
-function inVisibleDropdown() {
-  console.log('Invisible :>> ', "Invisible");
-  dropdownContent.classList.add("transitioning-out");
-  let outTransition = setTimeout(() => {
-    console.log('T :>>');
-    dropdownContent.classList.remove("transitioning-out");
-    dropdownContent.classList.remove("visible");
-    dropdownContent.classList.add("invisible");
-    clearTimeout(outTransition);
-    var isVisible = false;
-  }, 500);
+function inVisibleDropdown() { 
+  dropdownContent.classList.remove("dropdown-visible");
+  dropdownContent.classList.add("dropdown-invisible");
 }
