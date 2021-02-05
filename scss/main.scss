@@ -23,11 +23,6 @@ a {
 }
 
 ////////// NAV ////////////////////////////
-.social {
-  background-color: color(dark-grey);
-  height: 2rem;
-  width: 100vw;
-}
 
 nav {
   z-index: 10; // nav index needs to be > 0, since .all-content cannot be negative, or buttons would be unclickable
@@ -154,6 +149,19 @@ nav {
     left: 0;
     background: #000;
   }
+}
+/////SOCIAL////////
+.social {
+  background-color: color(dark-grey);
+  height: 2rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  
+}
+.fab {
+  color: white;
+  margin: 0 1em;
 }
 
 /////ALL CONTENT////////////////////////////////////////////////

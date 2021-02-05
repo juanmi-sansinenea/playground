@@ -183,12 +183,6 @@ a {
   text-decoration: none;
 }
 
-.social {
-  background-color: #333;
-  height: 2rem;
-  width: 100vw;
-}
-
 nav {
   z-index: 10;
   color: white;
@@ -356,6 +350,23 @@ nav ul ul li {
   width: 100%;
   left: 0;
   background: #000;
+}
+
+.social {
+  background-color: #333;
+  height: 2rem;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fab {
+  color: white;
+  margin: 0 1em;
 }
 
 .all-content {
