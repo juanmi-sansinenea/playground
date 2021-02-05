@@ -133,12 +133,18 @@ table {
 }
 
 .button-homepage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem 1rem 2rem;
   margin: 2rem;
   cursor: pointer;
   border-radius: 2rem;
@@ -227,7 +233,7 @@ nav ul ul li {
   color: #333;
   list-style: none;
   margin: 0px;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   border-bottom: 1px solid #e4e4e4;
 }
 
@@ -245,6 +251,7 @@ nav ul ul li {
   margin-top: 0px;
   -webkit-animation: slidein 0.5s ease;
           animation: slidein 0.5s ease;
+  border-radius: 10px;
 }
 
 @-webkit-keyframes slidein {
