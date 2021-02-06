@@ -2,6 +2,9 @@
 @media (min-width: map-get($media-widths, sm)) {
   nav {
     height: nav_height(sm);
+    ul li {
+      display: none;
+    }
   }
   nav.roll-up {
     top: invert_nav_height(sm);
@@ -9,16 +12,25 @@
   .all-content {
     top: nav_height(sm);
   }
+  .fa-bars {
+    display: block;
+  }
   //TABLET md
   @media (min-width: map-get($media-widths, md)) {
     nav {
       height: nav_height(md);
+      ul li {
+        display: block;
+      }
     }
     nav.roll-up {
       top: invert_nav_height(md);
     }
     .all-content {
       top: nav_height(md);
+    }
+    .fa-bars {
+      display: none;
     }
     //DESKTOP lg
     @media (min-width: map-get($media-widths, lg)) {
