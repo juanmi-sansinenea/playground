@@ -65,6 +65,10 @@ nav {
   .fa-bars {
     display: none;
     margin-right: 1rem;
+    cursor: pointer;
+    &:hover {
+      color: color(dark-grey);
+    }
   }
 }
 
@@ -79,7 +83,7 @@ nav {
   position: absolute;
   background-color: white;
   min-width: 120px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: $shadow;
   z-index: 20;
   margin-top: 0px;
   animation: slidein 0.5s ease;
@@ -156,6 +160,21 @@ nav {
     background: #000;
   }
 }
+//----------Modal (mobile menu)-----------
+.modal {
+  display: none;
+  --marg: 20px;
+  width: calc(100vw - var(--marg));
+  height: calc(100vh - var(--marg));
+  background-color: #fff;
+  z-index: 30;
+  border-radius: 10px;
+  box-shadow: $shadow;
+  position: fixed;
+  top: calc(var(--marg)/2);
+  left: calc(var(--marg)/2);
+}
+
 /////SOCIAL////////
 .social {
   background-color: color(dark-grey);

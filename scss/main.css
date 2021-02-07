@@ -261,6 +261,11 @@ nav ul ul li {
 nav .fa-bars {
   display: none;
   margin-right: 1rem;
+  cursor: pointer;
+}
+
+nav .fa-bars:hover {
+  color: #333;
 }
 
 .dropdown-trigger {
@@ -383,6 +388,21 @@ nav .fa-bars {
   width: 100%;
   left: 0;
   background: #000;
+}
+
+.modal {
+  display: none;
+  --marg: 20px;
+  width: calc(100vw - var(--marg));
+  height: calc(100vh - var(--marg));
+  background-color: #fff;
+  z-index: 30;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: calc(var(--marg)/2);
+  left: calc(var(--marg)/2);
 }
 
 .social {
