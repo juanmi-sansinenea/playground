@@ -13,7 +13,7 @@
     top: nav_height(sm);
   }
   .fa-bars {
-    display: block;
+    display: block !important; //<-- !important forces the style to apply, which otherwise was behaving inconsistently
   }
   //TABLET md
   @media (min-width: map-get($media-widths, md)) {
@@ -30,7 +30,7 @@
       top: nav_height(md);
     }
     .fa-bars {
-      display: none;
+      display: none !important;
     }
     //DESKTOP lg
     @media (min-width: map-get($media-widths, lg)) {
@@ -43,6 +43,9 @@
       .all-content {
         top: nav_height(lg);
       }
+      .fa-bars {
+        display: none !important;
+      }
       //HI RES xl
       @media (min-width: map-get($media-widths, xl)) {
         nav {
@@ -53,6 +56,9 @@
         }
         .all-content {
           top: nav_height(xl);
+        }
+        .fa-bars {
+          display: none !important;
         }
       }
     }

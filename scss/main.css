@@ -98,7 +98,7 @@ table {
     top: 50px;
   }
   .fa-bars {
-    display: block;
+    display: block !important;
   }
 }
 
@@ -116,7 +116,7 @@ table {
     top: 70px;
   }
   .fa-bars {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -130,6 +130,9 @@ table {
   .all-content {
     top: 80px;
   }
+  .fa-bars {
+    display: none !important;
+  }
 }
 
 @media (min-width: 0px) and (min-width: 768px) and (min-width: 1366px) and (min-width: 1920px) {
@@ -141,6 +144,9 @@ table {
   }
   .all-content {
     top: 100px;
+  }
+  .fa-bars {
+    display: none !important;
   }
 }
 
@@ -253,7 +259,8 @@ nav ul ul li {
 }
 
 nav .fa-bars {
-  margin-right: 2rem;
+  display: none;
+  margin-right: 1rem;
 }
 
 .dropdown-trigger {
