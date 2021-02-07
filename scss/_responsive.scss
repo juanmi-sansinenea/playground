@@ -36,6 +36,9 @@
     @media (min-width: map-get($media-widths, lg)) {
       nav {
         height: nav_height(lg);
+        ul li {
+          display: block !important;
+        }
       }
       nav.roll-up {
         top: invert_nav_height(lg);
@@ -50,6 +53,9 @@
       @media (min-width: map-get($media-widths, xl)) {
         nav {
           height: nav_height(xl);
+          ul li {
+            display: block !important;
+          }
         }
         nav.roll-up {
           top: invert_nav_height(xl);
@@ -64,3 +70,5 @@
     }
   }
 }
+
+/// falta quitar redundancias de ul li

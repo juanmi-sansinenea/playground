@@ -162,11 +162,12 @@ nav {
 }
 //----------Modal (mobile menu)-----------
 .modal {
-  display: none;
+  display: block;
   --marg: 20px;
   width: calc(100vw - var(--marg));
   height: calc(100vh - var(--marg));
-  background-color: #fff;
+  background-color: #000;
+  opacity: 0.5;
   z-index: 30;
   border-radius: 10px;
   box-shadow: $shadow;
