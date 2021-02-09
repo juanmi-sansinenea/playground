@@ -88,7 +88,7 @@ table {
   nav {
     height: 50px;
   }
-  nav ul li {
+  nav .normal-menu ul li {
     display: none;
   }
   nav.roll-up {
@@ -106,7 +106,7 @@ table {
   nav {
     height: 70px;
   }
-  nav ul li {
+  nav .normal-menu ul li {
     display: block;
   }
   nav.roll-up {
@@ -124,7 +124,7 @@ table {
   nav {
     height: 80px;
   }
-  nav ul li {
+  nav .li {
     display: block !important;
   }
   nav.roll-up {
@@ -142,7 +142,7 @@ table {
   nav {
     height: 100px;
   }
-  nav ul li {
+  nav .li {
     display: block !important;
   }
   nav.roll-up {
@@ -236,6 +236,7 @@ nav {
 }
 
 nav ul {
+  z-index: 30;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -247,6 +248,39 @@ nav ul {
 nav ul > li {
   list-style: none;
   margin: 10px 2em 0px 2em;
+}
+
+nav ul > li .menu-item {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px 0px 10px 0px;
+  position: relative;
+  -webkit-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
+nav ul > li .menu-item:hover {
+  color: #000;
+}
+
+nav ul > li .menu-item::after {
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0%;
+  position: absolute;
+  background: #fff;
+  -webkit-transition: background 0.3s linear 0s, width 0.3s ease 0s;
+  transition: background 0.3s linear 0s, width 0.3s ease 0s;
+  width: 0;
+}
+
+nav ul > li .menu-item:hover::after {
+  width: 100%;
+  left: 0;
+  background: #000;
 }
 
 nav ul ul {
@@ -274,6 +308,30 @@ nav .fa-bars:hover {
   color: #333;
 }
 
+nav .fa-bars:active .modal {
+  display: block;
+}
+
+.modal-menu {
+  display: none;
+  --marg: 20px;
+  width: calc(100vw - var(--marg));
+  height: calc(100vh - var(--marg));
+  background-color: white;
+  z-index: 20;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: calc(var(--marg) / 2);
+  left: calc(var(--marg) / 2);
+  color: #333;
+}
+
+.modal-menu ul li .menu-item {
+  color: #333;
+}
+
 .dropdown-trigger {
   position: relative;
 }
@@ -284,7 +342,7 @@ nav .fa-bars:hover {
   min-width: 120px;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 20;
+  z-index: 40;
   margin-top: 0px;
   -webkit-animation: slidein 0.5s ease;
           animation: slidein 0.5s ease;
@@ -361,55 +419,6 @@ nav .fa-bars:hover {
     margin-top: 25px;
     visibility: hidden;
   }
-}
-
-.menu-item {
-  color: #fff;
-  text-decoration: none;
-  display: inline-block;
-  padding: 0px 0px 10px 0px;
-  position: relative;
-  -webkit-transition: color 0.3s ease 0s;
-  transition: color 0.3s ease 0s;
-}
-
-.menu-item:hover {
-  color: #000;
-}
-
-.menu-item::after {
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  left: 0%;
-  position: absolute;
-  background: #fff;
-  -webkit-transition: background 0.3s linear 0s, width 0.3s ease 0s;
-  transition: background 0.3s linear 0s, width 0.3s ease 0s;
-  width: 0;
-}
-
-.menu-item:hover::after {
-  width: 100%;
-  left: 0;
-  background: #000;
-}
-
-.modal {
-  display: block;
-  --marg: 20px;
-  width: calc(100vw - var(--marg));
-  height: calc(100vh - var(--marg));
-  background-color: #000;
-  opacity: 0.5;
-  z-index: 30;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  top: calc(var(--marg)/2);
-  left: calc(var(--marg)/2);
 }
 
 .social {

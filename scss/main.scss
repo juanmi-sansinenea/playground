@@ -21,6 +21,12 @@ h1 {
 a {
   text-decoration: none;
 }
+// .display-block {
+//   display: block;
+// }
+// .display-none {
+//   display: none;
+// }
 
 ////////// NAV ////////////////////////////
 
@@ -40,19 +46,46 @@ nav {
   transition: var(--ease);
 
   ul {
+    z-index: 30;
     display: flex;
     align-items: center;
     > li {
       list-style: none;
       margin: 10px 2em 0px 2em; // *10px to compensate for ...
+      .menu-item {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        padding: 0px 0px 10px 0px; // *... to compensate for these 10 px here
+        position: relative;
+        transition: color 0.3s ease 0s;
+        &:hover {
+          color: #000;
+        }
+        &::after {
+          bottom: 0;
+          content: "";
+          display: block;
+          height: 2px;
+          left: 0%;
+          position: absolute;
+          background: #fff;
+          transition: background 0.3s linear 0s, width 0.3s ease 0s;
+          width: 0;
+        }
+        &:hover::after {
+          width: 100%;
+          left: 0;
+          background: #000;
+        }
+      }
     }
+    // ----------Dropdown - submenu----------
     ul {
       display: block;
       list-style: none;
       li {
         display: block;
-        //width: 100%;
-        //background-color: rgb(255, 0, 0, 0.1);
         font-size: 10pt;
         color: color(dark-grey);
         list-style: none;
@@ -62,12 +95,38 @@ nav {
       }
     }
   }
+
   .fa-bars {
     display: none;
     margin-right: 1rem;
     cursor: pointer;
     &:hover {
       color: color(dark-grey);
+    }
+    &:active .modal {
+      display: block;
+    }
+  }
+}
+//----------Modal base (mobile menu)-----------
+.modal-menu {
+  display: none;
+  --marg: 20px;
+  width: calc(100vw - var(--marg));
+  height: calc(100vh - var(--marg));
+  background-color: white;
+  z-index: 20;
+  border-radius: 10px;
+  box-shadow: $shadow;
+  position: fixed;
+  top: calc(var(--marg) / 2);
+  left: calc(var(--marg) / 2);
+  color: color(dark-grey);
+  ul {
+    li {
+      .menu-item {
+        color: color(dark-grey);
+      }
     }
   }
 }
@@ -84,7 +143,7 @@ nav {
   background-color: white;
   min-width: 120px;
   box-shadow: $shadow;
-  z-index: 20;
+  z-index: 40;
   margin-top: 0px;
   animation: slidein 0.5s ease;
   border-radius: 5px;
@@ -131,50 +190,6 @@ nav {
     visibility: hidden;
   }
 }
-//--------------Nav menu items----------------------
-.menu-item {
-  color: #fff;
-  text-decoration: none;
-
-  display: inline-block;
-  padding: 0px 0px 10px 0px; // *... these 10 px here
-  position: relative;
-  transition: color 0.3s ease 0s;
-  &:hover {
-    color: #000;
-  }
-  &::after {
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 0%;
-    position: absolute;
-    background: #fff;
-    transition: background 0.3s linear 0s, width 0.3s ease 0s;
-    width: 0;
-  }
-  &:hover::after {
-    width: 100%;
-    left: 0;
-    background: #000;
-  }
-}
-//----------Modal (mobile menu)-----------
-.modal {
-  display: block;
-  --marg: 20px;
-  width: calc(100vw - var(--marg));
-  height: calc(100vh - var(--marg));
-  background-color: #000;
-  opacity: 0.5;
-  z-index: 30;
-  border-radius: 10px;
-  box-shadow: $shadow;
-  position: fixed;
-  top: calc(var(--marg)/2);
-  left: calc(var(--marg)/2);
-}
 
 /////SOCIAL////////
 .social {
@@ -183,7 +198,6 @@ nav {
   width: 100vw;
   display: flex;
   align-items: center;
-  
 }
 .fab {
   color: white;

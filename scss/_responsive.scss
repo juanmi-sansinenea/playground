@@ -2,8 +2,12 @@
 @media (min-width: map-get($media-widths, sm)) {
   nav {
     height: nav_height(sm);
-    ul li {
-      display: none;
+    .normal-menu {
+      ul {
+        li {
+          display: none;
+        }
+      }
     }
   }
   nav.roll-up {
@@ -19,9 +23,14 @@
   @media (min-width: map-get($media-widths, md)) {
     nav {
       height: nav_height(md);
-      ul li {
-        display: block;
+      .normal-menu {
+        ul {
+          li {
+            display: block;
+          }
+        }
       }
+      
     }
     nav.roll-up {
       top: invert_nav_height(md);
@@ -36,7 +45,7 @@
     @media (min-width: map-get($media-widths, lg)) {
       nav {
         height: nav_height(lg);
-        ul li {
+        .li {
           display: block !important;
         }
       }
@@ -53,7 +62,7 @@
       @media (min-width: map-get($media-widths, xl)) {
         nav {
           height: nav_height(xl);
-          ul li {
+          .li {
             display: block !important;
           }
         }
