@@ -7,15 +7,14 @@
 // --  modalMenu.style.display = "block";
 
 // Colors (Translated from SCSS, available at _variables,
-// needed here because preprocessor stands in the middle
-// when trying to inject sass functions)
-// const colors = {
-//   primary: "#ff6b00",
-//   secondary: "#e233ff",
-//   middleGrey: "rgb(78, 78, 78)",
-//   lightGrey: "rgb(228, 228, 228)",
-//   darkGrey: "#333",
-// };
+// needed to be repeated here because SASS runs before JS
+const colors = {
+  primary: "#ff6b00",
+  secondary: "#e233ff",
+  middleGrey: "rgb(78, 78, 78)",
+  lightGrey: "rgb(228, 228, 228)",
+  darkGrey: "#333",
+};
 
 // Menu items
 // const m0 = document.querySelector(".m0");
@@ -69,10 +68,21 @@ const menuMarkup = `
           </li>
         </ul>
 `;
+const modalMenuMarkup = `
+<div class="close-x">
+  <span class="iconify" 
+    data-icon="codicon:close" 
+    data-inline="false" 
+    style="color: ${colors.darkGrey};" 
+    data-width="2rem" 
+    data-height="2rem">
+  </span>
+</div>
+${menuMarkup}`;
 const normalMenu = document.querySelector(".normal-menu");
 const modalMenu = document.querySelector(".modal-menu");
 normalMenu.innerHTML = menuMarkup;
-modalMenu.innerHTML = menuMarkup;
+modalMenu.innerHTML = modalMenuMarkup;
 
 // HIDE / SHOW MENU on SCROLL interaction
 const nav = document.querySelector("nav");

@@ -312,26 +312,6 @@ nav .fa-bars:active .modal {
   display: block;
 }
 
-.modal-menu {
-  display: none;
-  --marg: 20px;
-  width: calc(100vw - var(--marg));
-  height: calc(100vh - var(--marg));
-  background-color: white;
-  z-index: 20;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  top: calc(var(--marg) / 2);
-  left: calc(var(--marg) / 2);
-  color: #333;
-}
-
-.modal-menu ul li .menu-item {
-  color: #333;
-}
-
 .dropdown-trigger {
   position: relative;
 }
@@ -421,6 +401,40 @@ nav .fa-bars:active .modal {
   }
 }
 
+.modal .close-x {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 1rem;
+}
+
+.modal .modal-menu {
+  display: none;
+  --marg: 20px;
+  width: calc(100vw - var(--marg));
+  height: calc(100vh - var(--marg));
+  background-color: white;
+  z-index: 20;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: calc(var(--marg) / 2);
+  left: calc(var(--marg) / 2);
+  color: #333;
+}
+
+.modal .modal-menu ul li {
+  padding: 1rem 2rem;
+}
+
+.modal .modal-menu ul li .menu-item {
+  color: #333;
+}
+
 .social {
   background-color: #333;
   height: 2rem;
@@ -436,6 +450,13 @@ nav .fa-bars:active .modal {
 .fab {
   color: white;
   margin: 0 1em;
+}
+
+.fa-times {
+  background-color: red;
+  color: #333;
+  margin: 0 1em;
+  z-index: 50;
 }
 
 .all-content {
