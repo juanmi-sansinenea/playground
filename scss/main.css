@@ -401,7 +401,7 @@ nav .fa-bars:active .modal {
   }
 }
 
-.modal .close-x {
+.modal .close-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -409,6 +409,16 @@ nav .fa-bars:active .modal {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 1rem;
+}
+
+.modal .close-button .close-x {
+  -webkit-transition: 0.3s ease 0s;
+  transition: 0.3s ease 0s;
+}
+
+.modal .close-button .close-x:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .modal .modal-menu {

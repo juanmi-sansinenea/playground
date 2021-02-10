@@ -171,10 +171,16 @@ nav {
 
 //----------Modal(mobile menu)-----------
 .modal {
-  .close-x {
-    display: flex; 
-    justify-content: flex-end;
-    padding: 1rem;
+  .close-button {
+    display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+    .close-x {
+      transition: 0.3s ease 0s;
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
   }
   .modal-menu {
     display: none;
