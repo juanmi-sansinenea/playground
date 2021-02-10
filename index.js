@@ -69,6 +69,7 @@ const menuMarkup = `
         </ul>
 `;
 const modalMenuMarkup = `
+<a class="close-button" href="#">
 <div class="close-x">
   <span class="iconify" 
     data-icon="codicon:close" 
@@ -78,6 +79,7 @@ const modalMenuMarkup = `
     data-height="2rem">
   </span>
 </div>
+</a>
 ${menuMarkup}`;
 const normalMenu = document.querySelector(".normal-menu");
 const modalMenu = document.querySelector(".modal-menu");
@@ -123,13 +125,19 @@ function inVisibleDropdown() {
 
 // Launch MODAL (mobile)
 const modalTrigger = document.querySelector(".fa-bars");
-const li = document.querySelectorAll(".modal-menu ul li");
+// const li = document.querySelectorAll(".modal-menu ul li");
 
 modalTrigger.addEventListener("click", () => {
   modalMenu.style.display = "block";
-  for (let i = 0; i < li.length; i++) {
-    //li[i].style.display = "block";
-  }
+  // for (let i = 0; i < li.length; i++) {
+  //   //li[i].style.display = "block";
+  // }
 });
+
+// Close MODAL
+const closeButton = document.querySelector(".close-button");
+closeButton.addEventListener("click", ()=>{
+  modalMenu.style.display = "none";
+})
 
 /// Should make the whole nav into a class and singleton...
