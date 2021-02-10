@@ -105,22 +105,36 @@ explore.addEventListener("click", () => {
 });
 
 // Launch DROPDOWN menu, remove when mouse leaves dropdown, and remove when mouse leaves menu item too
-const dropdownTrigger = document.querySelector(".dropdown-trigger");
-const dropdownContent = document.querySelector(".dropdown-content");
+const dropdownTrigger = document.querySelectorAll(".dropdown-trigger");
+const dropdownContent = document.querySelectorAll(".dropdown-content");
 
-dropdownTrigger.addEventListener("mouseover", visibleDropdown);
-dropdownTrigger.addEventListener("mouseleave", inVisibleDropdown);
-dropdownContent.addEventListener("mouseover", visibleDropdown);
-dropdownContent.addEventListener("mouseleave", inVisibleDropdown);
+// [0], [1] is needed because of querySelectorAll: there are 2 instances of dropdown:
+  // normal-menu and modal-menu:
+dropdownTrigger[0].addEventListener("mouseover", visibleDropdown);
+dropdownTrigger[0].addEventListener("mouseleave", inVisibleDropdown);
+dropdownContent[0].addEventListener("mouseover", visibleDropdown);
+dropdownContent[0].addEventListener("mouseleave", inVisibleDropdown);
+
+dropdownTrigger[1].addEventListener("mouseover", visibleSubmenu);
+dropdownTrigger[1].addEventListener("mouseleave", inVisibleSubmenu);
+dropdownContent[1].addEventListener("mouseover", visibleSubmenu);
+dropdownContent[1].addEventListener("mouseleave", inVisibleSubmenu);
 
 function visibleDropdown() {
-  dropdownContent.classList.remove("dropdown-init");
-  dropdownContent.classList.remove("dropdown-invisible");
-  dropdownContent.classList.add("dropdown-visible");
+  dropdownContent[0].classList.remove("dropdown-invisible");
+  dropdownContent[0].classList.add("dropdown-visible");
 }
 function inVisibleDropdown() {
-  dropdownContent.classList.remove("dropdown-visible");
-  dropdownContent.classList.add("dropdown-invisible");
+  dropdownContent[0].classList.remove("dropdown-visible");
+  dropdownContent[0].classList.add("dropdown-invisible");
+}
+function visibleSubmenu() {
+  dropdownContent[1].classList.remove("dropdown-invisible");
+  dropdownContent[1].classList.add("dropdown-visible");
+}
+function inVisibleSubmenu() {
+  dropdownContent[1].classList.remove("dropdown-visible");
+  dropdownContent[1].classList.add("dropdown-invisible");
 }
 
 // Launch MODAL (mobile)
@@ -133,6 +147,7 @@ modalTrigger.addEventListener("click", () => {
   //   //li[i].style.display = "block";
   // }
 });
+
 
 // Close MODAL
 const closeButton = document.querySelector(".close-button");
