@@ -443,6 +443,12 @@ nav .fa-bars:active .modal {
 
 .modal .modal-menu ul li .menu-item {
   color: #333;
+  font-weight: 500;
+}
+
+.modal .modal-menu ul li .dropdown-content-modal {
+  margin-top: 1.5rem;
+  display: none;
 }
 
 .social {
@@ -486,7 +492,7 @@ article {
 
 article .main {
   line-height: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #4e4e4e;
 }
 /*# sourceMappingURL=main.css.map */

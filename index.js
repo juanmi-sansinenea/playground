@@ -97,7 +97,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Click button > action
+// Click the [explore] button dear Unicorn > action!
 const explore = document.querySelector(".explore");
 
 explore.addEventListener("click", () => {
@@ -109,16 +109,13 @@ const dropdownTrigger = document.querySelectorAll(".dropdown-trigger");
 const dropdownContent = document.querySelectorAll(".dropdown-content");
 
 // [0], [1] is needed because of querySelectorAll: there are 2 instances of dropdown:
-  // normal-menu and modal-menu:
+// normal-menu and modal-menu:
 dropdownTrigger[0].addEventListener("mouseover", visibleDropdown);
 dropdownTrigger[0].addEventListener("mouseleave", inVisibleDropdown);
 dropdownContent[0].addEventListener("mouseover", visibleDropdown);
 dropdownContent[0].addEventListener("mouseleave", inVisibleDropdown);
 
-dropdownTrigger[1].addEventListener("mouseover", visibleSubmenu);
-dropdownTrigger[1].addEventListener("mouseleave", inVisibleSubmenu);
-dropdownContent[1].addEventListener("mouseover", visibleSubmenu);
-dropdownContent[1].addEventListener("mouseleave", inVisibleSubmenu);
+dropdownTrigger[1].addEventListener("click", toggleSubmenu);
 
 function visibleDropdown() {
   dropdownContent[0].classList.remove("dropdown-invisible");
@@ -128,13 +125,10 @@ function inVisibleDropdown() {
   dropdownContent[0].classList.remove("dropdown-visible");
   dropdownContent[0].classList.add("dropdown-invisible");
 }
-function visibleSubmenu() {
-  dropdownContent[1].classList.remove("dropdown-invisible");
-  dropdownContent[1].classList.add("dropdown-visible");
-}
-function inVisibleSubmenu() {
-  dropdownContent[1].classList.remove("dropdown-visible");
-  dropdownContent[1].classList.add("dropdown-invisible");
+function toggleSubmenu() {
+  dropdownContent[1].style.display = "none"
+    ? (dropdownContent[1].style.display = "block")
+    : (dropdownContent[1].style.display = "none");
 }
 
 // Launch MODAL (mobile)
@@ -143,16 +137,19 @@ const modalTrigger = document.querySelector(".fa-bars");
 
 modalTrigger.addEventListener("click", () => {
   modalMenu.style.display = "block";
+  // clean classes
+  dropdownContent[1].classList.remove("dropdown-content");
+  dropdownContent[1].classList.remove("dropdown-init");
+  dropdownContent[1].classList.add("dropdown-content-modal");
   // for (let i = 0; i < li.length; i++) {
   //   //li[i].style.display = "block";
   // }
 });
 
-
 // Close MODAL
 const closeButton = document.querySelector(".close-button");
-closeButton.addEventListener("click", ()=>{
+closeButton.addEventListener("click", () => {
   modalMenu.style.display = "none";
-})
+});
 
-/// Should make the whole nav into a class and singleton...
+/// -----> Should make the whole nav into a class and instantiate a singleton...

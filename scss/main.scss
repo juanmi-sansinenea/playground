@@ -33,7 +33,7 @@ a {
 nav {
   z-index: 10; // nav index needs to be > 0, since .all-content cannot be negative, or buttons would be unclickable
   color: white;
-  font-weight: weight(medium);
+  font-weight: font-weight(medium);
   //this syntax is made available thru functions, see file _variables.scss
   background: $gradient-1;
   position: fixed;
@@ -199,12 +199,18 @@ nav {
       li {
         padding: 1rem 2rem;
         .menu-item {
-          color: color(dark-grey);
+          color:color(dark-grey);
+          font-weight: font-weight(medium);
+        }
+        .dropdown-content-modal {
+          margin-top: 1.5rem;
+          display: none;
         }
       }
     }
   }
 }
+
 
 /////SOCIAL////////
 .social {
@@ -257,7 +263,7 @@ article {
 
   .main {
     line-height: 1.5rem;
-    font-weight: 300;
+    font-weight: font-weight(regular);
     color: map-get($colors, middle-grey);
   }
 }
