@@ -447,8 +447,7 @@ nav .fa-bars:active .modal {
 }
 
 .modal .modal-menu ul li .dropdown-content-modal {
-  margin-top: 1.5rem;
-  display: none;
+  margin-top: 2rem;
 }
 
 .social {

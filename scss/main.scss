@@ -203,8 +203,8 @@ nav {
           font-weight: font-weight(medium);
         }
         .dropdown-content-modal {
-          margin-top: 1.5rem;
-          display: none;
+          margin-top: 2rem;
+          //display: none; //---> this is injected by JS, otherwise can't be accessed
         }
       }
     }

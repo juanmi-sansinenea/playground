@@ -109,7 +109,13 @@ const dropdownTrigger = document.querySelectorAll(".dropdown-trigger");
 const dropdownContent = document.querySelectorAll(".dropdown-content");
 
 // [0], [1] is needed because of querySelectorAll: there are 2 instances of dropdown:
-// normal-menu and modal-menu:
+// normal-menu and modal-menu, thus:
+// dropdownTrigger[0] is NORMAL .dropdown-trigger
+// dropdownTrigges[1] is MODAL .dropdown-trigger
+// dropdownContent[0] is NORMAL .dropdown-content
+// dropdownContent[1] is MODAL .dropdown-content,
+// -----> which later becomes dropdown-content-modal
+
 dropdownTrigger[0].addEventListener("mouseover", visibleDropdown);
 dropdownTrigger[0].addEventListener("mouseleave", inVisibleDropdown);
 dropdownContent[0].addEventListener("mouseover", visibleDropdown);
@@ -126,7 +132,7 @@ function inVisibleDropdown() {
   dropdownContent[0].classList.add("dropdown-invisible");
 }
 function toggleSubmenu() {
-  dropdownContent[1].style.display = "none"
+  dropdownContent[1].style.display === "none"
     ? (dropdownContent[1].style.display = "block")
     : (dropdownContent[1].style.display = "none");
 }
@@ -140,7 +146,9 @@ modalTrigger.addEventListener("click", () => {
   // clean classes
   dropdownContent[1].classList.remove("dropdown-content");
   dropdownContent[1].classList.remove("dropdown-init");
-  dropdownContent[1].classList.add("dropdown-content-modal");
+  dropdownContent[1].classList.add("dropdown-content-modal"); //<-- for stylin'
+  dropdownContent[1].style.display = "none";
+  
   // for (let i = 0; i < li.length; i++) {
   //   //li[i].style.display = "block";
   // }
