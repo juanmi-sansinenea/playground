@@ -19,6 +19,9 @@
   .fa-bars {
     display: block !important; //<-- !important forces the style to apply, which otherwise was behaving inconsistently
   }
+  h1 {
+    font-size: 2.5rem;
+  }
   //TABLET md
   @media (min-width: map-get($media-widths, md)) {
     nav {
@@ -41,6 +44,10 @@
     .fa-bars {
       display: none !important;
     }
+    h1 {
+      font-size: 5rem;
+    }
+   
     //DESKTOP lg
     @media (min-width: map-get($media-widths, lg)) {
       nav {
