@@ -123,6 +123,7 @@ dropdownContent[0].addEventListener("mouseleave", inVisibleDropdown);
 
 dropdownTrigger[1].addEventListener("click", toggleSubmenu);
 
+// normal dropdown
 function visibleDropdown() {
   dropdownContent[0].classList.remove("dropdown-invisible");
   dropdownContent[0].classList.add("dropdown-visible");
@@ -131,6 +132,7 @@ function inVisibleDropdown() {
   dropdownContent[0].classList.remove("dropdown-visible");
   dropdownContent[0].classList.add("dropdown-invisible");
 }
+// modal (mobile) dropdown
 function toggleSubmenu() {
   dropdownContent[1].style.display === "none"
     ? (dropdownContent[1].style.display = "block")

@@ -31,6 +31,11 @@
 
 .module {
   background-color: map-get($map: $colors, $key: light-grey);
-  margin: 0.25rem;
+  margin: 0px;
   overflow-y: scroll; // not working (?)
+}
+@for $i from 1 through 12 {
+    .module:nth-child(#{$i}) {
+      background-color: rgb(calc(#{$i}*30),calc(#{$i}*20),calc(#{$i}*250));
+    }
 }

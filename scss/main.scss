@@ -13,7 +13,6 @@ body {
 }
 
 h1 {
-  
   font-weight: 800;
   margin: 2rem;
   color: color(dark-grey);
@@ -27,6 +26,7 @@ a {
 // .display-none {
 //   display: none;
 // }
+
 
 ////////// NAV ////////////////////////////
 
@@ -173,8 +173,8 @@ nav {
 .modal {
   .close-button {
     display: flex;
-      justify-content: flex-end;
-      padding: 1rem;
+    justify-content: flex-end;
+    padding: 1rem;
     .close-x {
       transition: 0.3s ease 0s;
       &:hover {
@@ -196,14 +196,28 @@ nav {
     left: calc(var(--marg) / 2);
     color: color(dark-grey);
     ul {
-      li {
+      > li {
         padding: 1rem 2rem;
+        animation: unfold 1s ease;
         .menu-item {
-          color:color(dark-grey);
+          color: color(dark-grey);
           font-weight: font-weight(medium);
         }
         .dropdown-content-modal {
           margin-top: 2rem;
+          
+          @for $i from 1 through 5 {
+            > ul li:nth-child(#{$i}) {
+              --time-unit: 0.05s;
+              opacity: 0;
+              
+              
+              animation: unfold 0.5s ease;
+              animation-fill-mode: forwards;
+              animation-delay: calc(var(--time-unit)*#{$i});
+            }
+          }
+
           //display: none; //---> this is injected by JS, otherwise can't be accessed
         }
       }
@@ -211,6 +225,14 @@ nav {
   }
 }
 
+@keyframes unfold {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /////SOCIAL////////
 .social {
